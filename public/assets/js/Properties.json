@@ -1,0 +1,661 @@
+[
+    {
+        "id": 1,
+        "image": "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?q=80&w=2534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Modern Apartment in City Center",
+        "location": "San Francisco, CA",
+        "name": "[Nama Properti]",
+        "price": "12.499.000",
+        "rating": 4.9,
+        "reviews": 120,
+        "isFavorited": false,
+        "latitude": -6.28,
+        "longitude": 107.92,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Asep",
+                "date": "19 Okt 2024",
+                "rating": 5.0,
+                "comment": "bagus, nyaman!"
+            },
+            {
+                "id": 2,
+                "user": "Tini",
+                "date": "18 Okt 2024",
+                "rating": 5.0,
+                "comment": "Lokasi bagus, pelayanan mantap"
+            },
+            {
+                "id": 3,
+                "user": "Tono",
+                "date": "18 Okt 2024",
+                "rating": 5.0,
+                "comment": "Lokasi bagus, pelayanan mantap"
+            }
+        ],
+        "offersLeft": [
+            "Garden view",
+            "WiFi",
+            "Pets allowed",
+            "Free washer"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Free driveway parking",
+            "55 inch HDTV",
+            "Security cameras"
+        ],
+        "category": "Villa"
+    },
+    {
+        "id": 2,
+        "image": "https://plus.unsplash.com/premium_photo-1682377521625-c656fc1ff3e1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Luxury Villa with Private Pool",
+        "location": "Los Angeles, CA",
+        "price": "12.539.999",
+        "name": "[Nama Properti]",
+        "rating": 4.8,
+        "reviews": 85,
+        "isFavorited": false,
+        "latitude": -1.16,
+        "longitude": 111.17,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Asep",
+                "date": "19 Okt 2024",
+                "rating": 5.0,
+                "comment": "Villa ini luar biasa!"
+            },
+            {
+                "id": 2,
+                "user": "Tini",
+                "date": "18 Okt 2024",
+                "rating": 4.0,
+                "comment": "Kolam pribadinya sangat bagus."
+            },
+            {
+                "id": 3,
+                "user": "Tono",
+                "date": "17 Okt 2024",
+                "rating": 4.5,
+                "comment": "Tempat yang sempurna untuk bersantai."
+            }
+        ],
+        "offersLeft": [
+            "Private pool",
+            "WiFi",
+            "Pets allowed",
+            "Free washer"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Free driveway parking",
+            "55 inch HDTV",
+            "Security cameras"
+        ],
+        "category": "Villa"
+    },
+    {
+        "id": 3,
+        "image": "https://plus.unsplash.com/premium_photo-1684175656320-5c3f701c082c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Cozy Cottage in the Woods",
+        "location": "Aspen, CO",
+        "price": "1.539.999",
+        "name": "[Nama Properti]",
+        "rating": 4.7,
+        "reviews": 64,
+        "isFavorited": false,
+        "latitude": -0.78,
+        "longitude": 109.29,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Asep",
+                "date": "19 Okt 2024",
+                "rating": 5.0,
+                "comment": "Cottage yang sangat nyaman dan tenang."
+            },
+            {
+                "id": 2,
+                "user": "Tini",
+                "date": "18 Okt 2024",
+                "rating": 4.5,
+                "comment": "Lokasi yang sempurna untuk bersantai."
+            },
+            {
+                "id": 3,
+                "user": "Tono",
+                "date": "17 Okt 2024",
+                "rating": 4.0,
+                "comment": "Sangat suka dengan suasana pedesaannya."
+            }
+        ],
+        "offersLeft": [
+            "Garden view",
+            "WiFi",
+            "Pets allowed",
+            "Free washer"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Free driveway parking",
+            "55 inch HDTV",
+            "Security cameras"
+        ],
+        "category": "Apartment"
+    },
+    {
+        "id": 4,
+        "image": "https://images.unsplash.com/photo-1729180253305-23990aee8705?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Gunung Tibet",
+        "location": "Tibet",
+        "price": "4.339.999",
+        "name": "[Nama Properti]",
+        "rating": 4.9,
+        "reviews": 299,
+        "isFavorited": false,
+        "latitude": -0.46,
+        "longitude": 111.14,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Budi",
+                "date": "20 Okt 2024",
+                "rating": 5.0,
+                "comment": "Pemandangan yang indah!"
+            },
+            {
+                "id": 2,
+                "user": "Toni",
+                "date": "19 Okt 2024",
+                "rating": 4.8,
+                "comment": "Tempat yang tenang dan damai."
+            },
+            {
+                "id": 3,
+                "user": "Susi",
+                "date": "18 Okt 2024",
+                "rating": 4.9,
+                "comment": "Sangat puas dengan pelayanannya."
+            }
+        ],
+        "offersLeft": [
+            "Mountain view",
+            "WiFi",
+            "Pets allowed",
+            "Breakfast included"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Free parking",
+            "Security cameras",
+            "Spa"
+        ],
+        "category": "Guest House"
+    },
+    {
+        "id": 5,
+        "image": "https://images.unsplash.com/photo-1606046604972-77cc76aee944?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Bobo Kabin",
+        "location": "Puncak Gunung Tinggi Sekali",
+        "price": "1.129.999",
+        "name": "[Nama Properti]",
+        "rating": 4.2,
+        "reviews": 2000,
+        "isFavorited": false,
+        "latitude": -6.86,
+        "longitude": 108.32,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Fikri",
+                "date": "21 Okt 2024",
+                "rating": 4.0,
+                "comment": "Tempat yang cozy dan nyaman."
+            },
+            {
+                "id": 2,
+                "user": "Joni",
+                "date": "20 Okt 2024",
+                "rating": 4.3,
+                "comment": "Viewnya sangat keren!"
+            },
+            {
+                "id": 3,
+                "user": "Rani",
+                "date": "19 Okt 2024",
+                "rating": 4.1,
+                "comment": "Bisa lebih baik, tapi cukup bagus."
+            }
+        ],
+        "offersLeft": [
+            "Mountain view",
+            "WiFi",
+            "Pets allowed",
+            "Fireplace"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Hot tub",
+            "55 inch HDTV",
+            "Private balcony"
+        ],
+        "category": "Guest House"
+    },
+    {
+        "id": 6,
+        "image": "https://images.unsplash.com/photo-1712024278957-64ae2cf7a7bd?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Hotel Bali",
+        "location": "Bali Seminyak",
+        "price": "1.324.999",
+        "name": "[Nama Properti]",
+        "rating": 4.6,
+        "reviews": 4000,
+        "isFavorited": false,
+        "latitude": -2.53,
+        "longitude": 115.53,
+        "discount": 10,
+        "user": {
+            "name": "Panomsak",
+            "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+            "hostingDuration": "1 year hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Dewi",
+                "date": "20 Okt 2024",
+                "rating": 4.6,
+                "comment": "Hotel yang bagus di pusat kota."
+            },
+            {
+                "id": 2,
+                "user": "Eka",
+                "date": "19 Okt 2024",
+                "rating": 4.8,
+                "comment": "Lokasi sangat strategis!"
+            },
+            {
+                "id": 3,
+                "user": "Agus",
+                "date": "18 Okt 2024",
+                "rating": 4.4,
+                "comment": "Fasilitasnya lengkap dan nyaman."
+            }
+        ],
+        "offersLeft": [
+            "City view",
+            "WiFi",
+            "Pets allowed",
+            "Free breakfast"
+        ],
+        "offersRight": [
+            "Kitchen",
+            "Gym",
+            "55 inch HDTV",
+            "Private pool"
+        ],
+        "category": "Kost"
+    },
+    {
+        "id": 12,
+        "image": "https://images.unsplash.com/photo-1632037677514-97f510339078?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Coastal Beachfront Retreat",
+        "location": "Miami, FL",
+        "price": "3.789.999",
+        "name": "[Nama Properti]",
+        "rating": 4.7,
+        "reviews": 1200,
+        "isFavorited": true,
+        "latitude": -2.39,
+        "longitude": 114.84,
+        "discount": 15,
+        "user": {
+            "name": "Mario",
+            "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
+            "hostingDuration": "2 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Rian",
+                "date": "22 Okt 2024",
+                "rating": 4.9,
+                "comment": "Pemandangan pantai luar biasa!"
+            },
+            {
+                "id": 2,
+                "user": "Nadia",
+                "date": "21 Okt 2024",
+                "rating": 4.7,
+                "comment": "Pelayanan sangat baik."
+            },
+            {
+                "id": 3,
+                "user": "Edo",
+                "date": "20 Okt 2024",
+                "rating": 4.8,
+                "comment": "Tempat yang tenang dan santai."
+            }
+        ],
+        "offersLeft": [
+            "Beachfront view",
+            "WiFi",
+            "Pets allowed",
+            "Free breakfast"
+        ],
+        "offersRight": [
+            "Outdoor pool",
+            "Spa",
+            "Free parking",
+            "Private balcony"
+        ],
+        "category": "Kost"
+    },
+    {
+        "id": 13,
+        "image": "https://plus.unsplash.com/premium_photo-1686090450479-370d5ddf4de1?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Luxury Penthouse in the City",
+        "location": "New York, NY",
+        "name": "[Nama Properti]",
+        "price": "8.499.999",
+        "rating": 4.9,
+        "reviews": 1500,
+        "isFavorited": false,
+        "latitude": -7.27,
+        "longitude": 105.03,
+        "discount": 20,
+        "user": {
+            "name": "Samantha",
+            "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
+            "hostingDuration": "3 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Andy",
+                "date": "23 Okt 2024",
+                "rating": 5.0,
+                "comment": "Kamar sangat luas dan modern."
+            },
+            {
+                "id": 2,
+                "user": "Lina",
+                "date": "22 Okt 2024",
+                "rating": 4.9,
+                "comment": "Pemandangan kota yang menakjubkan."
+            },
+            {
+                "id": 3,
+                "user": "Jack",
+                "date": "21 Okt 2024",
+                "rating": 5.0,
+                "comment": "Fasilitas yang lengkap dan nyaman."
+            }
+        ],
+        "offersLeft": [
+            "City skyline view",
+            "WiFi",
+            "Free breakfast",
+            "Rooftop access"
+        ],
+        "offersRight": [
+            "Fitness center",
+            "Private elevator",
+            "Free parking",
+            "Security cameras"
+        ],
+        "category": "Villa"
+    },
+    {
+        "id": 14,
+        "image": "https://plus.unsplash.com/premium_photo-1685133856065-a32643cc56d0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Rustic Cabin in the Mountains",
+        "location": "Rocky Mountains, CO",
+        "price": "2.199.999",
+        "name": "[Nama Properti]",
+        "rating": 4.5,
+        "reviews": 950,
+        "isFavorited": true,
+        "latitude": -3.65,
+        "longitude": 132.96,
+        "discount": 12,
+        "user": {
+            "name": "Alex",
+            "avatar": "https://randomuser.me/api/portraits/men/35.jpg",
+            "hostingDuration": "1.5 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Kiki",
+                "date": "20 Okt 2024",
+                "rating": 4.6,
+                "comment": "Kabin yang hangat dan nyaman."
+            },
+            {
+                "id": 2,
+                "user": "Fajar",
+                "date": "19 Okt 2024",
+                "rating": 4.7,
+                "comment": "Pemandangan gunung yang sangat indah."
+            },
+            {
+                "id": 3,
+                "user": "Yani",
+                "date": "18 Okt 2024",
+                "rating": 4.5,
+                "comment": "Tempat yang sempurna untuk bersantai."
+            }
+        ],
+        "offersLeft": [
+            "Mountain view",
+            "WiFi",
+            "Fireplace",
+            "Free breakfast"
+        ],
+        "offersRight": [
+            "Hot tub",
+            "Private balcony",
+            "55 inch HDTV",
+            "Free parking"
+        ],
+        "category": "Hotel"
+    },
+    {
+        "id": 15,
+        "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Private Island Getaway",
+        "location": "Bahamas",
+        "price": "15.999.999",
+        "rating": 4.9,
+        "reviews": 500,
+        "isFavorited": true,
+        "latitude": 4.69,
+        "longitude": 101.02,
+        "discount": 5,
+        "user": {
+            "name": "Carlos",
+            "avatar": "https://randomuser.me/api/portraits/men/44.jpg",
+            "hostingDuration": "2 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Bambang",
+                "date": "24 Okt 2024",
+                "rating": 5.0,
+                "comment": "Tempat yang sangat eksklusif."
+            },
+            {
+                "id": 2,
+                "user": "Wulan",
+                "date": "23 Okt 2024",
+                "rating": 4.9,
+                "comment": "Pemandangan laut yang menakjubkan."
+            },
+            {
+                "id": 3,
+                "user": "Ari",
+                "date": "22 Okt 2024",
+                "rating": 5.0,
+                "comment": "Pengalaman yang luar biasa!"
+            }
+        ],
+        "offersLeft": [
+            "Beachfront view",
+            "WiFi",
+            "Private beach",
+            "Free breakfast"
+        ],
+        "offersRight": [
+            "Infinity pool",
+            "Private dock",
+            "Spa",
+            "Free parking"
+        ],
+        "category": "Apartment"
+    },
+    {
+        "id": 16,
+        "image": "https://images.unsplash.com/photo-1561518801-3a7645cf0256?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Luxury Penthouse in the City",
+        "location": "New York, NY",
+        "price": "8.499.999",
+        "name": "[Nama Properti]",
+        "rating": 4.9,
+        "reviews": 1500,
+        "isFavorited": false,
+        "latitude": 1.56,
+        "longitude": 113.06,
+        "discount": 20,
+        "user": {
+            "name": "Samantha",
+            "avatar": "https://randomuser.me/api/portraits/women/50.jpg",
+            "hostingDuration": "3 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Andy",
+                "date": "23 Okt 2024",
+                "rating": 5.0,
+                "comment": "Kamar sangat luas dan modern."
+            },
+            {
+                "id": 2,
+                "user": "Lina",
+                "date": "22 Okt 2024",
+                "rating": 4.9,
+                "comment": "Pemandangan kota yang menakjubkan."
+            },
+            {
+                "id": 3,
+                "user": "Jack",
+                "date": "21 Okt 2024",
+                "rating": 5.0,
+                "comment": "Fasilitas yang lengkap dan nyaman."
+            }
+        ],
+        "offersLeft": [
+            "City skyline view",
+            "WiFi",
+            "Free breakfast",
+            "Rooftop access"
+        ],
+        "offersRight": [
+            "Fitness center",
+            "Private elevator",
+            "Free parking",
+            "Security cameras"
+        ],
+        "category": "Villa"
+    },
+    {
+        "id": 17,
+        "image": "https://images.unsplash.com/photo-1522576775862-7168ae29372c?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "title": "Coastal Beachfront Retreat",
+        "location": "Miami, FL",
+        "price": "3.789.999",
+        "rating": 4.7,
+        "name": "[Nama Properti]",
+        "reviews": 1200,
+        "isFavorited": true,
+        "latitude": -4.42,
+        "longitude": 135.08,
+        "discount": 15,
+        "user": {
+            "name": "Mario",
+            "avatar": "https://randomuser.me/api/portraits/men/45.jpg",
+            "hostingDuration": "2 years hosting"
+        },
+        "reviewsList": [
+            {
+                "id": 1,
+                "user": "Rian",
+                "date": "22 Okt 2024",
+                "rating": 4.9,
+                "comment": "Pemandangan pantai luar biasa!"
+            },
+            {
+                "id": 2,
+                "user": "Nadia",
+                "date": "21 Okt 2024",
+                "rating": 4.7,
+                "comment": "Pelayanan sangat baik."
+            },
+            {
+                "id": 3,
+                "user": "Edo",
+                "date": "20 Okt 2024",
+                "rating": 4.8,
+                "comment": "Tempat yang tenang dan santai."
+            }
+        ],
+        "offersLeft": [
+            "Beachfront view",
+            "WiFi",
+            "Pets allowed",
+            "Free breakfast"
+        ],
+        "offersRight": [
+            "Outdoor pool",
+            "Spa",
+            "Free parking",
+            "Private balcony"
+        ],
+        "category": "Kost"
+    }
+]

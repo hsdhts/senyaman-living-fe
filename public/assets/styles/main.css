@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #app {
+    height: 100%;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+:root {
+    --maz-border-color: #d1d5db; /* Sesuaikan dengan warna border BaseInput Anda */
+    --maz-border-radius: 0.375rem; /* Sesuaikan dengan radius border BaseInput Anda */
+    --maz-border-width: 2px; /* Sesuaikan dengan lebar border BaseInput Anda */
+    --maz-input-padding: 0.5rem 0.75rem; /* Sesuaikan padding dengan BaseInput Anda */
+  }  

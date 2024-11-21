@@ -1,0 +1,64 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/dist
+
+# Cache dan Lock files
+/.eslintcache
+/.cache
+/yarn.lock
+/package-lock.json
+/pnpm-lock.yaml
+
+# Output dari build tool
+/build
+
+# VS Code settings
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Mac OS generated files
+*.DS_Store
+
+# Vue Devtools local storage files
+.local
+
+# Webpack temporary files
+/webpack-stats.json
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# Optional eslint cache
+/.eslintcache
+
+# Optional jest cache
+/jest
+
+# Optional vuepress build output
+.vuepress/dist
+
+# Storybook files
+storybook-static
