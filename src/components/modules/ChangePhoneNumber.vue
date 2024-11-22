@@ -14,17 +14,7 @@
 
             <!-- Form Input -->
             <form @submit.prevent="submitForm">
-                <!-- Country Code and Phone Number Fields -->
-                <!-- <div class="flex gap-2 mb-4 items-center">
-                    <div class="w-1/3">
-                        <BaseSelectPhone :options="countries" v-model="form.countryCode" floatingLabel="Country Code"
-                            :isInvalid="errors.countryCode" />
-                    </div>
-                    <div class="w-2/3">
-                        <BaseInput type="tel" placeholder="Phone Number" v-model="form.phoneNumber"
-                            :isInvalid="errors.phoneNumber" :isValid="isPhoneNumberValid" />
-                    </div>
-                </div> -->
+
                 <MazPhoneNumberInput v-model="phoneNumber" v-model:country-code="countryCode" show-code-on-list
                     :size="'md'" :defaultCountryCode="'ID'" :preferred-countries="['ID', 'MY', 'SG', 'US', 'TH']"
                     :ignored-countries="['AC']" @update="results = $event" class="custom-phone-input w-full mb-4" />

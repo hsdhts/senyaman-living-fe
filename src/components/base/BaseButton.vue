@@ -47,15 +47,15 @@ export default {
 }
 
 .base-button--primary {
-    background-color: #007bff;
+    background-color: #00703c;
     color: #fff;
-    border: 1px solid #007bff;
+    border: 1px solid #00703c;
 }
 
 .base-button--secondary {
     background-color: white;
-    border: 1px solid #007bff;
-    color: #007bff;
+    border: 1px solid #00703c;
+    color: #00703c;
     border-radius: 4px;
 }
 
@@ -66,3 +66,5 @@ export default {
     opacity: 0.6;
 }
 </style>
+
+

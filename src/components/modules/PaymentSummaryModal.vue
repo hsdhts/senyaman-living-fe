@@ -16,21 +16,6 @@
                 <button class="bg-blue-500 text-white px-4 py-2 rounded font-semibold">Bayar</button>
             </div>
 
-            <!-- Detail Pemesanan -->
-            <!-- <div class="flex gap-4 mb-4">
-                <img :src="bookingDetail.imageUrl" alt="Property Image" class="w-40 h-32 rounded-lg object-cover" />
-                <div>
-                    <p class="text-gray-600 text-sm">{{ bookingDetail.location }} - [Nama Properti]</p>
-                    <h3 class="text-lg font-semibold">{{ bookingDetail.title }}</h3>
-                    <p class="text-sm text-gray-500">{{ $formatters.formatDate(bookingDetail.checkIn) }} - {{
-                $formatters.formatDate(bookingDetail.checkOut) }}</p>
-                    <div class="flex flex-row gap-2">
-                        <AppIcon icon="mdi:account" class="w-5 h-5 mr-1" />
-                        <p class="text-sm text-gray-500">{{ bookingDetail.guests }} Guests</p>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="flex items-start gap-4 mb-4">
                 <img :src="bookingDetail.imageUrl" alt="Property Image"
                     class="w-[200px] h-[160px] rounded-lg object-cover mr-4" />

@@ -1,59 +1,64 @@
 <template>
     <div class="w-full">
-        <form class="space-y-2">
-            <!-- Menggunakan BaseInput dengan custom password logic -->
-            <BaseInput
-                v-model="localPassword"
-                :type="isVisible ? 'text' : 'password'"
-                :placeholder="placeholder"
-                :disabled="disabled"
-                :label="label"
-                :floatingLabel="floatingLabel"
-                :iconFront="iconFront"
-                :iconBack="isPasswordToggle ? (isVisible ? 'mdi:eye' : 'mdi:eye-off') : iconBack"
-                @iconBackClick="isPasswordToggle ? toggleVisibility : handleIconBackClick"
-                :class="['w-full', inputClass]"
-            />
-
-            <!-- Progress bar untuk kekuatan password -->
-            <div
-                class="mt-3 mb-4 h-1 rounded-full bg-border overflow-hidden"
-                role="progressbar"
-                :aria-valuenow="calculateStrength.score"
-                aria-valuemin="0"
-                aria-valuemax="5"
-            >
-                <div
-                    :class="['h-full', STRENGTH_CONFIG.colors[calculateStrength.score]]"
-                    :style="{ width: (calculateStrength.score / 5) * 100 + '%' }"
-                    class="transition-all duration-500"
-                />
-            </div>
-
-            <!-- Status password strength -->
-            <p id="password-strength" class="mb-2 text-sm font-medium flex justify-between">
-                <span>Must contain:</span>
-                <span>{{ STRENGTH_CONFIG.texts[Math.min(calculateStrength.score, 4)] }}</span>
-            </p>
-
-            <!-- Persyaratan password -->
-            <ul class="space-y-1.5" aria-label="Password requirements">
-                <li
-                    v-for="(req, index) in calculateStrength.requirements"
-                    :key="index"
-                    class="flex items-center space-x-2"
-                >
-                    <AppIcon :icon="req.met ? 'mdi:check' : 'mdi:close'" class="text-red-500" />
-                    <span :class="['text-xs', req.met ? 'text-emerald-600' : 'text-muted-foreground']">
-                        {{ req.text }}
-                        <span class="sr-only">{{ req.met ? ' - Requirement met' : ' - Requirement not met' }}</span>
-                    </span>
-                </li>
-            </ul>
-        </form>
+      <BaseInput
+        v-model="localPassword"
+        :type="isVisible ? 'text' : 'password'"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :label="label"
+        :floatingLabel="floatingLabel"
+        :iconFront="iconFront"
+        :iconBack="isPasswordToggle ? (isVisible ? 'mdi:eye' : 'mdi:eye-off') : iconBack"
+        @iconBackClick="isPasswordToggle ? toggleVisibility : handleIconBackClick"
+        :class="['w-full', inputClass]"
+      />
+  
+      <!-- Progress bar untuk kekuatan password -->
+      <div
+        v-if="showStrength"
+        class="mt-3 mb-4 h-1 rounded-full bg-border overflow-hidden"
+        role="progressbar"
+        :aria-valuenow="calculateStrength.score"
+        aria-valuemin="0"
+        aria-valuemax="5"
+      >
+        <div
+          :class="['h-full', STRENGTH_CONFIG.colors[calculateStrength.score]]"
+          :style="{ width: (calculateStrength.score / 5) * 100 + '%' }"
+          class="transition-all duration-500"
+        />
+      </div>
+  
+      <p
+        v-if="showStrength"
+        id="password-strength"
+        class="mb-2 text-sm font-medium flex justify-between"
+      >
+        <span>Must contain:</span>
+        <span>{{ STRENGTH_CONFIG.texts[Math.min(calculateStrength.score, 4)] }}</span>
+      </p>
+  
+      <!-- Persyaratan password -->
+      <ul
+        v-if="showStrength"
+        class="space-y-1.5"
+        aria-label="Password requirements"
+      >
+        <li
+          v-for="(req, index) in calculateStrength.requirements"
+          :key="index"
+          class="flex items-center space-x-2"
+        >
+          <AppIcon :icon="req.met ? 'mdi:check' : 'mdi:close'" class="text-red-500" />
+          <span :class="['text-xs', req.met ? 'text-emerald-600' : 'text-muted-foreground']">
+            {{ req.text }}
+            <span class="sr-only">{{ req.met ? ' - Requirement met' : ' - Requirement not met' }}</span>
+          </span>
+        </li>
+      </ul>
     </div>
-</template>
-
+  </template>
+  
 <script>
 const PASSWORD_REQUIREMENTS = [
     { regex: /.{8,}/, text: 'At least 8 characters' },
@@ -111,6 +116,10 @@ export default {
             type: String,
             default: '',
         },
+        showStrength: { // Properti baru untuk mengontrol pengukur strength
+        type: Boolean,
+         default: true, // Secara default aktif
+    },
     },
     data() {
         return {

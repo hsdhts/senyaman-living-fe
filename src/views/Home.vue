@@ -5,32 +5,12 @@
         <SearchHeaderLayout />
       </div>
     </div>
-    <div class="category-section full-width-bg">
-      <div class="content">
-        <CategoryLayout class="px-20" />
-      </div>
-    </div>
-    <div class="carousel-section full-width-bg">
-      <div class="content">
-        <CarouselLayout />
-      </div>
-    </div>
-
-    <div class="budget-section full-width-bg">
-      <div class="content">
-        <BudgetFilterLayout />
-      </div>
-    </div>
 
   </DefaultLayout>
 </template>
 
 <script>
 import DefaultLayout from '@/components/layout/DefaultLayout.vue'; // Tambahkan ini
-import SearchHeaderLayout from '@/components/layout/SearchHeaderLayout.vue'; // Tambahkan ini
-import CategoryLayout from '@/components/layout/CategoryLayout.vue'; // Tambahkan ini
-import CarouselLayout from '@/components/layout/CarouselLayout.vue'; // Tambahkan ini
-import BudgetFilterLayout from '@/components/layout/BudgetFilterLayout.vue'; // Tambahkan ini
 
 import { mapState, mapActions } from 'vuex';
 
@@ -38,10 +18,6 @@ export default {
   name: 'HomePage',
   components: {
     DefaultLayout, // Daftarkan komponen di sini
-    SearchHeaderLayout,
-    CategoryLayout,
-    CarouselLayout,
-    BudgetFilterLayout
   },
   computed: {
     ...mapState('properties', ['isLoading', 'properties', 'displayedProperties']),
@@ -58,6 +34,7 @@ export default {
       }));
     },
   },
+
   data() {
     return {
     };
@@ -90,21 +67,6 @@ export default {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-}
-
-.category-section {
-  background: linear-gradient(to bottom, #fefefe 50%, #F6FAFF 50%);
-  padding: 2rem 0;
-}
-
-.carousel-section {
-  background: linear-gradient(to bottom, #ffffff 50%, #F6FAFF 50%);
-  padding: 2rem 0;
-}
-
-.budget-section {
-  background: linear-gradient(to bottom, #F6FAFF 50%, #fefefe 50%);
-  padding: 2rem 0;
 }
 
 /* Inner content styling */

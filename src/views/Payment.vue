@@ -376,17 +376,15 @@
 
 <script>
 import DefaultLayout from '@/components/layout/DefaultLayout.vue';
-import StepperLayout from '@/components/layout/StepperLayout.vue';
 import PaymentVALayout from '@/components/layout/PaymentVALayout.vue';
 
 export default {
   name: "PaymentView",
   components: {
-    StepperLayout,
     DefaultLayout,
     PaymentVALayout
   },
-  data() {
+    data() {
     return {
       showLoading: false, // State untuk menampilkan LoadingScreen
       showPaymentSummary: false, // Kontrol untuk menampilkan modal

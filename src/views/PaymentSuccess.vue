@@ -1,5 +1,4 @@
 <template>
-  <StepperLayout :disableStepper="false" />
 
   <div class="container mx-auto p-6">
     <div class="bg-white shadow-lg rounded-lg p-6">
@@ -27,14 +26,10 @@
 </template>
 
 <script>
-import StepperLayout from '@/components/layout/StepperLayout.vue';
 import store from '@/store';
 
 export default {
   name: "PaymentSuccess",
-  components: {
-    StepperLayout,
-  },
   setup() {
     const isPaymentSuccess = store.paymentSuccess;
     

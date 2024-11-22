@@ -22,7 +22,6 @@
                         <AppIcon icon="mdi:magnify" width="24" height="40" />
                         <label class="ml-2">Search</label>
                     </BaseButton>
-                    <!-- Filters Button for Mobile -->
                     <BaseButton class="flex ml-2 md:hidden rounded h-full items-center w-full" type="secondary"
                         @click="toggleFilterPopUp">
                         <AppIcon icon="mdi:filter-cog" width="24" height="40" />
@@ -32,19 +31,16 @@
             </div>
 
             <div class="flex">
-                <!-- Sidebar Filters for Desktop -->
                 <SearchFilter class="hidden md:block w-1/4" v-if="min" :min="min" :max="max" :minValue="minValue"
                     :maxValue="maxValue" v-model:minValue="minValue" v-model:maxValue="maxValue"
                     :propertyTypeList="propertyTypeList" :selectedPropertyType="selectedPropertyType"
                     @selectPropertyType="selectPropertyType" />
 
-                <!-- Property Listings and Map Toggle -->
                 <div :class="showMap ? 'w-1/2' : 'w-full'" class="p-4 bg-white">
                     <div class="flex items-center justify-between mb-4">
                         <h1 class="text-xl md:text-2xl font-semibold">
                             {{ properties.length }} places in Medan
                         </h1>
-                        <!-- View Maps Toggle, hidden on small screens -->
                         <div class="hidden md:flex items-center">
                             <label for="toggle" class="flex items-center cursor-pointer">
                                 <span class="mr-2 text-gray-700">View maps</span>

@@ -1,63 +1,58 @@
 <template>
-  <div class="relative mb-4">
-      <!-- Label if not using floatingLabel -->
+    <div class="relative mb-3"> <!-- Ubah mb-4 menjadi mb-3 untuk jarak lebih rapat -->
       <label v-if="label && !floatingLabel" :class="['block text-sm font-medium mb-1', labelClass]">
-          {{ label }}
+        {{ label }}
       </label>
-
+  
       <div :class="[
-          'rounded-lg overflow-hidden relative',
-          !disabled && localInputValue ? 'border border-blue-500' : 'border border-gray-300',
-          disabled ? 'bg-gray-100' : '',
+          'relative',
           floatingLabel ? 'flex flex-col items-start px-3 py-2' : 'flex items-center'
       ]">
-          <!-- Floating Label -->
-          <label v-if="floatingLabel" :class="['absolute text-xs transition-all duration-200', {
-              'text-blue-500': localInputValue || placeholder,
-              'text-gray-500 top-3 left-3': !localInputValue && !placeholder
-          }, iconFront ? 'left-10' : 'left-3']">
-              {{ floatingLabel }}
-          </label>
-
-          <!-- Front Icon -->
-          <AppIcon v-if="iconFront" :icon="iconFront" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
-
-          <!-- Input Element -->
-          <input
-              :type="isPasswordVisible ? 'text' : type"
-              :placeholder="placeholder"
-              v-model="localInputValue"
-              @input="emitInput"
-              @focus="type !== 'password' && moveCursorToEnd"
-              :disabled="disabled"
-              :class="[
-                  'outline-none border-none w-full',
-                  disabled ? 'text-gray-500' : 'text-gray-700',
-                  floatingLabel ? 'pt-4 pb-1' : 'p-3',
-                  iconFront ? 'pl-10' : '',
-                  iconBack || type === 'password' ? 'pr-10' : '',
-                  'placeholder-gray-500'
-              ]"
-          />
-
-          <!-- Toggle Password Visibility Icon -->
-          <AppIcon
-              v-if="type === 'password'"
-              :icon="isPasswordVisible ? 'mdi:eye' : 'mdi:eye-off'"
-              @click="togglePasswordVisibility"
-              class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-600 cursor-pointer"
-          />
-
-          <!-- Back Icon for non-password fields -->
-          <AppIcon
-              v-if="iconBack && type !== 'password'"
-              :icon="iconBack"
-              @click="handleIconBackClick"
-              class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer"
-          />
+        <label v-if="floatingLabel" :class="['absolute text-xs transition-all duration-200', {
+            'text-blue-500': localInputValue || placeholder,
+            'text-gray-500 top-3 left-3': !localInputValue && !placeholder
+        }, iconFront ? 'left-10' : 'left-3']">
+          {{ floatingLabel }}
+        </label>
+  
+        <AppIcon v-if="iconFront" :icon="iconFront" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+  
+        <input
+          :type="isPasswordVisible ? 'text' : type"
+          :placeholder="placeholder"
+          v-model="localInputValue"
+          @input="emitInput"
+          @focus="type !== 'password' && moveCursorToEnd"
+          :disabled="disabled"
+          :class="[
+              'outline-none w-full border-b',
+              disabled ? 'text-gray-500 border-gray-300' : 'text-gray-700 border-gray-500 focus:border-blue-500',
+              floatingLabel ? 'pt-4 pb-1' : 'p-2',
+              iconFront ? 'pl-10' : '',
+              iconBack || type === 'password' ? 'pr-10' : '',
+              'placeholder-gray-500'
+          ]"
+        />
+  
+        <!-- Toggle Password Visibility Icon -->
+        <AppIcon
+          v-if="type === 'password'"
+          :icon="isPasswordVisible ? 'mdi:eye' : 'mdi:eye-off'"
+          @click="togglePasswordVisibility"
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-600 cursor-pointer"
+        />
+  
+        <!-- Back Icon -->
+        <AppIcon
+          v-if="iconBack && type !== 'password'"
+          :icon="iconBack"
+          @click="handleIconBackClick"
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer"
+        />
       </div>
-  </div>
-</template>
+    </div>
+  </template>
+
 
 <script>
 export default {
@@ -137,23 +132,29 @@ export default {
 </script>
 
 <style scoped>
-.border-blue-500 {
-  border-color: #3b82f6;
+.relative {
+  border: none;
+  background: none;
 }
 
-.text-blue-500 {
-  color: #3b82f6;
+input {
+  border: none; 
+  border-bottom: 1px solid #d1d5db; 
+  transition: border-color 0.3s; 
+  padding: 0.5;
 }
 
-/* .text-gray-400 {
-  color: #d1d5db;
-} */
+input:focus {
+  border-bottom-color: #00703c;
+  outline: none; 
+}
 
-/* .text-gray-700 {
-  color: #374151;
-} */
+input:disabled {
+  border-bottom-color: #d1d5db; 
+  background-color: transparent; 
+}
 
-.bg-gray-100 {
-  background-color: #f3f4f6;
+.AppIcon {
+  cursor: pointer;
 }
 </style>

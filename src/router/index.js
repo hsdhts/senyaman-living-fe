@@ -19,12 +19,11 @@ const routes = [
     component: () => import('@/views/Register.vue'), // Lazy loading
   },
   {
-    path: '/property/:id',
-    name: 'PropertyDetail',
-    component: () => import('@/views/PropertyDetail.vue'), // Lazy loading
-    props: true, // Pass route params as props
-    // meta: { requiresAuth: true }, // Example for protected route
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: () => import('@/views/ForgotPassword.vue'), // Lazy loading
   },
+  
   {
     path: '/payment',
     name: 'Payment',
@@ -47,11 +46,6 @@ const routes = [
     // }
   },
   {
-    path: '/area',
-    name: 'Area',
-    component: () => import('@/views/MapArea.vue'), // Lazy loading
-  },
-  {
     path: '/dashboard',
     component: () => import('@/views/Dashboard.vue'),
     meta: { requiresAuth: true },
@@ -61,20 +55,6 @@ const routes = [
         path: 'profile',
         name: 'Profile',
         component: () => import('@/views/Profile.vue'),
-        menu: true,
-        icon: 'mdi:plus'
-      },
-      {
-        path: 'ongoing',
-        name: 'Ongoing Order',
-        component: () => import('@/views/OnGoingOrder.vue'),
-        menu: true,
-        icon: 'mdi:plus'
-      },
-      {
-        path: 'orderhistory',
-        name: 'Order History',
-        component: () => import('@/views/BookingHistory.vue'),
         menu: true,
         icon: 'mdi:plus'
       },
