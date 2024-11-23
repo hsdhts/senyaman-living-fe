@@ -63,7 +63,6 @@
             <p v-if="errorMessage" class="text-red-500 text-center mt-4">{{ errorMessage }}</p>
           </form>
   
-          <!-- Teks Toggle antara Login dan Register -->
           <template v-if="currentType === 'login' || currentType === 'register'">
             <p class="text-center mt-4 text-gray-600">
               {{ isLoginMode ? $t('noAccount') : $t('alreadyAccount') }}

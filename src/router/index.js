@@ -14,6 +14,11 @@ const routes = [
     component: () => import('@/views/Login.vue'), // Lazy loading
   },
   {
+    path: '/phone-login',
+    name: 'Phone Login',
+    component: () => import('@/views/LoginWithPhoneNumber.vue'), // Lazy loading
+  },
+  {
     path: '/register',
     name: 'Register',
     component: () => import('@/views/Register.vue'), // Lazy loading
@@ -23,7 +28,13 @@ const routes = [
     name: 'ForgotPassword',
     component: () => import('@/views/ForgotPassword.vue'), // Lazy loading
   },
-  
+
+  {
+    path: '/reset-password',
+    name: 'ForgotPassword',
+    component: () => import('@/views/ForgotPassword.vue'), // Lazy loading
+  },
+
   {
     path: '/payment',
     name: 'Payment',
