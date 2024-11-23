@@ -24,7 +24,7 @@
             </div>
   
             <BaseButton
-              type="primary"
+            type="primary"
               :disabled="!isPhoneNumberValid"
               class="w-full mt-4"
             >

@@ -30,9 +30,15 @@ const routes = [
   },
 
   {
+    path: '/input-verification-code',
+    name: 'InputVerificationCode',
+    component: () => import('@/views/InputVerificationCode.vue'), // Lazy loading
+  },
+
+  {
     path: '/reset-password',
-    name: 'ForgotPassword',
-    component: () => import('@/views/ForgotPassword.vue'), // Lazy loading
+    name: 'ResetPassword',
+    component: () => import('@/views/ResetPassword.vue'), // Lazy loading
   },
 
   {
@@ -41,6 +47,19 @@ const routes = [
     component: () => import('@/views/Payment.vue'), // Lazy loading
     // meta: { requiresAuth: true }, // Example for protected route
   },
+
+  {
+    path: '/reward',
+    name: 'RewardPage',
+    component: () => import('@/views/RewardPage.vue'), // Lazy loading
+  },
+
+  {
+    path: '/card',
+    name: 'CardPage',
+    component: () => import('@/views/CardPage.vue'), // Lazy loading,
+  },
+
   {
     path: '/PaymentSuccess',
     name: 'PaymentSuccess',
