@@ -190,7 +190,6 @@ export default {
 .text-gray-500 {
     color: #d1d5db;
 }
-
 .text-gray-700 {
     color: #374151;
 }

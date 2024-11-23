@@ -23,7 +23,6 @@
             placeholder="Enter your name"
             required
           />
-
           <div>
             <label for="dob" class="block text-sm font-medium text-gray-700">{{ $t('dateOfBirth') }}</label>
             <input
@@ -61,7 +60,6 @@
               required
             />
           </div>
-
           <BaseInput
             v-model="email"
             label="Email"
@@ -74,7 +72,6 @@
             label="Password"
             :showStrength="true" required
           />
-
           <BasePassword
             v-model="confirmPassword"
             label="Confirm Password"

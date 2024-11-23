@@ -59,8 +59,6 @@ export default {
     border-radius: 4px;
 }
 
-/* Tambahkan gaya untuk tipe tombol lain seperti 'success', 'danger', dll. */
-
 .is-disabled {
     cursor: not-allowed;
     opacity: 0.6;

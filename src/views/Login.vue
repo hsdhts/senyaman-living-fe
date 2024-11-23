@@ -17,7 +17,6 @@
         <p class="text-sm text-gray-500 mb-6">
           {{ $t('loginPrompt') }}
         </p>
-
         <form @submit.prevent="handleLogin">
           <BaseInput
             v-model="email"
