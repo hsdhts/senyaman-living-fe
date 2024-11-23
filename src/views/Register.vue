@@ -16,72 +16,60 @@
         <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ $t('createAccount') }}</h2>
         <p class="text-sm text-gray-500 mb-4">{{ $t('startRegister') }}</p>
 
-        <form @submit.prevent="handleRegister" class="space-y-3">
+        <form @submit.prevent="handleRegister" class="space-y-4">
+          <!-- Name -->
           <BaseInput
             v-model="name"
-            label="Name"
-            placeholder="Enter your name"
+            floatingLabel="Name"
             required
           />
-          <div>
-            <label for="dob" class="block text-sm font-medium text-gray-700">{{ $t('dateOfBirth') }}</label>
-            <input
-              id="dob"
-              type="date"
-              v-model="dateOfBirth"
-              class="w-full border-b border-gray-700 focus:outline-none focus:ring-0 focus:border-green-500"
-              required
-            />
-          </div>
 
           <BaseInput
             v-model="phoneNumber"
-            label="Phone Number"
-            placeholder="Enter your phone number"
+            floatingLabel="Phone Number"
             required
           />
 
-          <div class="flex justify-end">
+          <!-- OTP -->
+          <div v-if="otpSent" class="relative">
+            <BaseInput
+              v-model="otpCode"
+              floatingLabel="OTP Code"
+              required
+            />
             <button
               type="button"
               @click="handleSendOTP"
-              class="text-green-500 text-sm hover:underline"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 text-green-500 text-sm hover:underline"
               :disabled="otpSent"
             >
               {{ otpSent ? `Resend OTP (${resendTimer})` : "Resend OTP" }}
             </button>
           </div>
 
-          <div v-if="otpSent">
-            <BaseInput
-              v-model="OTP"
-              label="OTP Code"
-              placeholder="Enter OTP Code"
-              required
-            />
-          </div>
           <BaseInput
             v-model="email"
-            label="Email"
-            placeholder="Enter your email"
+            floatingLabel="Email"
             required
           />
 
           <BasePassword
             v-model="password"
-            label="Password"
-            :showStrength="true" required
+            floatingLabel="Password"
+            :showStrength="true"
+            required
           />
+
           <BasePassword
             v-model="confirmPassword"
-            label="Confirm Password"
-            :showStrength="false" required
+            floatingLabel="Confirm Password"
+            :showStrength="false"
+            required
           />
 
           <BaseInput
             v-model="referralCode"
-            label="Referral Code"
-            placeholder="Enter your referral code (Optional)"
+            floatingLabel="Referral Code"
           />
 
           <BaseButton
@@ -168,8 +156,8 @@ export default {
 
 <style scoped>
 /* Form Layout */
-.space-y-3 > *:not(:last-child) {
-  margin-bottom: 0;
+.space-y-4 > *:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 button:hover {

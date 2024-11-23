@@ -2,11 +2,8 @@
   <div class="bg-neutral-50 min-h-screen flex flex-col">
     <!-- Header -->
     <div class="bg-white border-b px-4 py-3 flex items-center space-x-3">
-      <router-link to="/" class="text-green-500">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </router-link>
+      <!-- Back Button -->
+      <BackButton />
       <h2 class="text-lg font-bold text-gray-800">{{ $t('login') }}</h2>
     </div>
 
@@ -18,19 +15,26 @@
           {{ $t('loginPrompt') }}
         </p>
         <form @submit.prevent="handleLogin">
+          <!-- Email -->
           <BaseInput
             v-model="email"
-            label="Email"
-            placeholder="Enter your email"
+            floatingLabel="Email"
             required
           />
 
-        <div class="mb-4">
-        <BasePassword v-model="password" label="Password" placeholder="Enter your Password" :showStrength="false" required />
-       </div>
+          <!-- Password -->
+          <div class="mb-4">
+            <BasePassword
+              v-model="password"
+              floatingLabel="Password"
+              :showStrength="false"
+              required
+            />
+          </div>
 
+          <!-- Forgot Password Link -->
           <div class="flex justify-between mt-2 mb-6">
-            <div></div> 
+            <div></div>
             <router-link
               to="/forgot-password"
               class="text-sm text-green-700 hover:underline"
@@ -51,7 +55,7 @@
         <!-- Register Link -->
         <p class="text-center text-sm text-gray-600 mt-4">
           {{ $t('noAccount') }}
-          <router-link to="/register" class="text-green-500 hover:underline">{{ $t('registerNow') }}</router-link>
+          <router-link to="/register" class="text-green-700 hover:underline">{{ $t('registerNow') }}</router-link>
         </p>
 
         <!-- Or Divider -->
@@ -91,13 +95,15 @@
 import BaseInput from "@/components/base/BaseInput.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
 import BasePassword from "@/components/base/BasePassword.vue";
+import BackButton from "@/components/base/BaseBackButton.vue"; // Import BackButton
 
 export default {
   name: "LoginPage",
   components: {
     BaseInput,
     BaseButton,
-    BasePassword
+    BasePassword,
+    BackButton,  // Register BackButton
   },
   data() {
     return {

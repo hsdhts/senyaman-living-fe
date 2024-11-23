@@ -1,159 +1,146 @@
 <template>
-    <div class="relative mb-3"> <!-- Ubah mb-4 menjadi mb-3 untuk jarak lebih rapat -->
-      <label v-if="label && !floatingLabel" :class="['block text-sm font-medium mb-1', labelClass]">
-        {{ label }}
-      </label>
-  
-      <div :class="[
-          'relative',
-          floatingLabel ? 'flex flex-col items-start px-3 py-2' : 'flex items-center'
-      ]">
-        <label v-if="floatingLabel" :class="['absolute text-xs transition-all duration-200', {
-            'text-blue-500': localInputValue || placeholder,
-            'text-gray-500 top-3 left-3': !localInputValue && !placeholder
-        }, iconFront ? 'left-10' : 'left-3']">
-          {{ floatingLabel }}
-        </label>
-        <AppIcon v-if="iconFront" :icon="iconFront" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
-  
-        <input
-          :type="isPasswordVisible ? 'text' : type"
-          :placeholder="placeholder"
-          v-model="localInputValue"
-          @input="emitInput"
-          @focus="type !== 'password' && moveCursorToEnd"
-          :disabled="disabled"
-          :class="[
-              'outline-none w-full border-b',
-              disabled ? 'text-gray-500 border-gray-300' : 'text-gray-700 border-gray-500 focus:border-blue-500',
-              floatingLabel ? 'pt-4 pb-1' : 'p-2',
-              iconFront ? 'pl-10' : '',
-              iconBack || type === 'password' ? 'pr-10' : '',
-              'placeholder-gray-500'
-          ]"
-        />
-  
-        <!-- Toggle Password Visibility Icon -->
-        <AppIcon
-          v-if="type === 'password'"
-          :icon="isPasswordVisible ? 'mdi:eye' : 'mdi:eye-off'"
-          @click="togglePasswordVisibility"
-          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-600 cursor-pointer"
-        />
-  
-        <!-- Back Icon -->
-        <AppIcon
-          v-if="iconBack && type !== 'password'"
-          :icon="iconBack"
-          @click="handleIconBackClick"
-          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer"
-        />
-      </div>
-    </div>
-  </template>
+  <div class="relative mb-4 group">
+    <!-- Floating Label -->
+    <label
+      v-if="floatingLabel"
+      :class="[
+        'absolute transition-all duration-300 pointer-events-auto cursor-text text-sm',
+        localInputValue || isFocused
+          ? 'text-green-600 text-xs -top-2 left-3'
+          : 'text-gray-400 top-3 left-3 group-hover:text-gray-600'
+      ]"
+      @click="focusInput"
+    >
+      {{ floatingLabel }}
+    </label>
 
+    <!-- Input Field -->
+    <input
+      ref="inputField"
+      :type="isPasswordVisible ? 'text' : type"
+      :placeholder="!floatingLabel ? placeholder : ''"
+      v-model="localInputValue"
+      @input="emitInput"
+      @focus="handleFocus(true)"
+      @blur="handleFocus(false)"
+      :disabled="disabled"
+      :class="[
+        'w-full outline-none border-b bg-transparent placeholder-gray-400 text-gray-800 transition-all duration-300',
+        disabled
+          ? 'border-gray-300'
+          : 'border-gray-500 focus:border-green-600 group-hover:border-gray-600',
+        floatingLabel ? 'pt-5 pb-2' : 'p-2',
+        iconFront ? 'pl-10' : '',
+        iconBack || type === 'password' ? 'pr-10' : ''
+      ]"
+    />
+
+    <!-- Front Icon -->
+    <AppIcon
+      v-if="iconFront"
+      :icon="iconFront"
+      class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"
+    />
+
+    <!-- Toggle Password Visibility -->
+    <AppIcon
+      v-if="type === 'password'"
+      :icon="isPasswordVisible ? 'mdi:eye' : 'mdi:eye-off'"
+      @click="togglePasswordVisibility"
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-600 cursor-pointer"
+    />
+
+    <!-- Back Icon -->
+    <AppIcon
+      v-if="iconBack && type !== 'password'"
+      :icon="iconBack"
+      @click="handleIconBackClick"
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 cursor-pointer"
+    />
+  </div>
+</template>
 
 <script>
 export default {
-  name: 'BaseInput',
+  name: "BaseInput",
   props: {
-      type: {
-          type: String,
-          default: 'text',
-      },
-      placeholder: {
-          type: String,
-          default: '',
-      },
-      modelValue: {
-          type: [String, Number, Boolean],
-          default: '',
-      },
-      floatingLabel: {
-          type: String,
-          default: '',
-      },
-      label: {
-          type: String,
-          default: '',
-      },
-      iconFront: {
-          type: String,
-          default: '',
-      },
-      iconBack: {
-          type: String,
-          default: '',
-      },
-      iconBackClick: {
-          type: Function,
-          default: null,
-      },
-      disabled: {
-          type: Boolean,
-          default: false,
-      },
+    type: {
+      type: String,
+      default: "text",
+    },
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    modelValue: {
+      type: [String, Number, Boolean],
+      default: "",
+    },
+    floatingLabel: {
+      type: String,
+      default: "",
+    },
+    iconFront: {
+      type: String,
+      default: "",
+    },
+    iconBack: {
+      type: String,
+      default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
-      return {
-          localInputValue: this.modelValue,
-          isPasswordVisible: false,
-      };
+    return {
+      localInputValue: this.modelValue,
+      isPasswordVisible: false,
+      isFocused: false,
+    };
   },
   methods: {
-      emitInput() {
-          this.$emit('update:modelValue', this.localInputValue);
-      },
-      moveCursorToEnd(event) {
-          this.$nextTick(() => {
-              const input = event.target;
-              if (['text', 'search', 'tel', 'url'].includes(this.type)) {
-                  const length = input.value.length;
-                  input.setSelectionRange(length, length);
-              }
-          });
-      },
-      togglePasswordVisibility() {
-          this.isPasswordVisible = !this.isPasswordVisible;
-      },
-      handleIconBackClick() {
-          if (this.iconBackClick) {
-              this.iconBackClick();
-          }
-      },
+    emitInput() {
+      this.$emit("update:modelValue", this.localInputValue);
+    },
+    togglePasswordVisibility() {
+      this.isPasswordVisible = !this.isPasswordVisible;
+    },
+    handleFocus(focused) {
+      this.isFocused = focused;
+    },
+    focusInput() {
+      this.$refs.inputField.focus();
+    },
   },
   watch: {
-      modelValue(newVal) {
-          this.localInputValue = newVal;
-      },
+    modelValue(newVal) {
+      this.localInputValue = newVal;
+    },
   },
 };
 </script>
 
 <style scoped>
-.relative {
-  border: none;
-  background: none;
-}
-
 input {
-  border: none; 
-  border-bottom: 1px solid #d1d5db; 
-  transition: border-color 0.3s; 
-  padding: 0.5;
+  border: none;
+  border-bottom: 1px solid #d1d5db;
+  transition: all 0.3s ease;
 }
 
 input:focus {
   border-bottom-color: #00703c;
-  outline: none; 
+  outline: none;
 }
 
 input:disabled {
-  border-bottom-color: #d1d5db; 
-  background-color: transparent; 
+  border-bottom-color: #d1d5db;
+  background-color: transparent;
 }
 
-.AppIcon {
-  cursor: pointer;
+label {
+  transition: all 0.3s ease;
+  cursor: text;
 }
 </style>
