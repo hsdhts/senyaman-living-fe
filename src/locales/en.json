@@ -32,6 +32,7 @@
     "continueWithPhoneNumber": "Continue with Phone Number",
     "continueWithApple": "Continue with Apple",
     "continueWithEmail": "Continue with Email",
+    "cannotFindAccount" : "Ops, it's look like we couldn't find your account with that information. Please make sure you've enetered a valid email address or phone number.",
     "findPerfectPlace": "Let’s Find Your",
     "perfectPlace": "Perfect Place.",
     "propertyDescription": "Each property design has its own meaning, and we are ready to help you find one that suits your taste.",
