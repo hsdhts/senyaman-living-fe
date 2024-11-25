@@ -28,6 +28,11 @@ const routes = [
     name: 'ForgotPassword',
     component: () => import('@/views/ForgotPassword.vue'), // Lazy loading
   },
+  {
+    path: '/reset-password',
+    name: 'ResetPassword',
+    component: () => import('@/views/ResetPassword.vue'), // Lazy loading
+  },
 
   {
     path: '/input-verification-code',
@@ -36,9 +41,9 @@ const routes = [
   },
 
   {
-    path: '/reset-password',
-    name: 'ResetPassword',
-    component: () => import('@/views/ResetPassword.vue'), // Lazy loading
+    path: '/input-promo-code',
+    name: 'InputPromoCode',
+    component: () => import('@/views/InputPromotionCode.vue'), // Lazy loading
   },
 
   {

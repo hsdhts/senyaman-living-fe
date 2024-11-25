@@ -1,7 +1,10 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col h-screen overflow-hidden">
+    <!-- Header -->
     <AppHeader />
-    <div class="w-full flex-grow bg-gray-100 px-4 py-6">
+
+    <!-- Scrollable content -->
+    <div class="flex-grow overflow-y-auto bg-gray-100 px-4 py-6">
       <MembershipStatus
         :points="105"
         membershipLevel="SILVER"
@@ -12,6 +15,8 @@
       <ExclusiveOffers :offers="offers" />
       <News :newsList="newsList" />
     </div>
+
+    <!-- Footer -->
     <AppFooter />
   </div>
 </template>
@@ -23,6 +28,7 @@ import TukarPoin from '@/components/layout/ExchangePointLayout.vue';
 import ExclusiveOffers from '@/components/layout/ExclusiveOfferLayout.vue';
 import News from '@/components/layout/NewsLayout.vue';
 import AppFooter from '@/components/layout/Footer.vue';
+
 export default {
   components: {
     AppHeader,
@@ -30,9 +36,8 @@ export default {
     TukarPoin,
     ExclusiveOffers,
     News,
-    AppFooter
+    AppFooter,
   },
-  
   data() {
     return {
       rewards: [
@@ -47,8 +52,24 @@ export default {
       newsList: [
         { id: 1, title: 'Breaking News', summary: 'Lorem ipsum dolor sit amet.' },
         { id: 2, title: 'Update News', summary: 'Consectetur adipiscing elit.' },
+        { id: 3, title: 'More News', summary: 'Sed do eiusmod tempor incididunt ut labore.' },
+        { id: 4, title: 'Another News', summary: 'Ut enim ad minim veniam, quis nostrud exercitation.' },
       ],
     };
   },
 };
 </script>
+
+<style scoped>
+.flex-grow {
+  overflow-y: auto; 
+}
+
+h-screen {
+  height: 100vh;
+}
+
+.overflow-hidden {
+  overflow: hidden; 
+}
+</style>

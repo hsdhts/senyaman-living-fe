@@ -62,4 +62,14 @@ button:hover {
   color: #10b981;
   transform: scale(1.1); 
 }
+
+footer {
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  z-index: 10; 
+  background-color: white;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+}
+
 </style>
